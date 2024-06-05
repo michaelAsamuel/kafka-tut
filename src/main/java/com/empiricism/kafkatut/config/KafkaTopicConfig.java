@@ -1,0 +1,17 @@
+package com.empiricism.kafkatut.config;
+
+import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.TopicBuilder;
+
+@Configuration
+public class KafkaTopicConfig {
+
+    @Bean
+    public NewTopic helloTopic(){
+        return TopicBuilder.name("users")
+                //.partitions(2)
+                .build();
+    }
+}
